@@ -5,6 +5,7 @@ import { Home } from "../components/pages/Home";
 import { Login } from "../components/pages/Login";
 import { homeRoutes } from "./HomeRoutes";
 import { Page404 } from "../components/pages/Page404";
+import { HeaderLayout } from "../components/templates/HeaderLayout";
 
 export const Router: VFC = memo(() => {
   return (
@@ -16,7 +17,7 @@ export const Router: VFC = memo(() => {
             key={route.path}
             path={route.path}
             index={route.index}
-            element={route.children}
+            element={<HeaderLayout>{route.children}</HeaderLayout>}
           />
         ))}
         ;
